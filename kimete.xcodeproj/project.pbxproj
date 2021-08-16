@@ -14,6 +14,10 @@
 		F20F194B26C9D410003B37E0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F194A26C9D410003B37E0 /* Persistence.swift */; };
 		F20F194E26C9D410003B37E0 /* kimete.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F20F194C26C9D410003B37E0 /* kimete.xcdatamodeld */; };
 		F20F195A26C9D955003B37E0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F195926C9D955003B37E0 /* Constant.swift */; };
+		F20F196126CB2895003B37E0 /* RouletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F196026CB2895003B37E0 /* RouletteView.swift */; };
+		F20F196326CB28A4003B37E0 /* RandomGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F196226CB28A4003B37E0 /* RandomGridView.swift */; };
+		F20F196526CB2BAD003B37E0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F196426CB2BAD003B37E0 /* SettingsView.swift */; };
+		F20F196726CB2D24003B37E0 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F196626CB2D24003B37E0 /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		F20F194D26C9D410003B37E0 /* kimete.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = kimete.xcdatamodel; sourceTree = "<group>"; };
 		F20F194F26C9D410003B37E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F20F195926C9D955003B37E0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F20F196026CB2895003B37E0 /* RouletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteView.swift; sourceTree = "<group>"; };
+		F20F196226CB28A4003B37E0 /* RandomGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGridView.swift; sourceTree = "<group>"; };
+		F20F196426CB2BAD003B37E0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F20F196626CB2D24003B37E0 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,7 @@
 		F20F195526C9D85B003B37E0 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F20F196626CB2D24003B37E0 /* Color+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -99,6 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				F20F194326C9D40E003B37E0 /* ContentView.swift */,
+				F20F196026CB2895003B37E0 /* RouletteView.swift */,
+				F20F196226CB28A4003B37E0 /* RandomGridView.swift */,
+				F20F196426CB2BAD003B37E0 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,9 +200,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F20F195A26C9D955003B37E0 /* Constant.swift in Sources */,
+				F20F196526CB2BAD003B37E0 /* SettingsView.swift in Sources */,
 				F20F194B26C9D410003B37E0 /* Persistence.swift in Sources */,
 				F20F194426C9D40E003B37E0 /* ContentView.swift in Sources */,
 				F20F194E26C9D410003B37E0 /* kimete.xcdatamodeld in Sources */,
+				F20F196126CB2895003B37E0 /* RouletteView.swift in Sources */,
+				F20F196326CB28A4003B37E0 /* RandomGridView.swift in Sources */,
+				F20F196726CB2D24003B37E0 /* Color+Extension.swift in Sources */,
 				F20F194226C9D40E003B37E0 /* kimeteApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
