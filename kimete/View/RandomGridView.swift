@@ -10,11 +10,19 @@ import SwiftUI
 struct RandomGridView: View {
     var body: some View {
         Text("RandomGridView")
+            .navigationBarTitle("NavigationBar", displayMode: .automatic)
+            .navigationBarItems(trailing:Button(action: {
+                
+            }, label: {
+                Image(systemName: "line.horizontal.3")
+            }))
     }
 }
 
 struct RandomGridView_Previews: PreviewProvider {
     static var previews: some View {
-        RandomGridView()
+        NavigationView {
+            RandomGridView()
+        }
     }
 }
