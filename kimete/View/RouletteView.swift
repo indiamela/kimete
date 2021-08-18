@@ -10,11 +10,20 @@ import SwiftUI
 struct RouletteView: View {
     var body: some View {
         Text("RouletteView")
+            .toolbar {
+                NavigationLink(
+                    destination: GroupsView(),
+                    label: {
+                        Image(systemName: "line.horizontal.3")
+                    })
+            }
     }
 }
 
 struct RouletteView_Previews: PreviewProvider {
     static var previews: some View {
-        RouletteView()
+        NavigationView{
+            RouletteView()
+        }
     }
 }

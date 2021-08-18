@@ -21,13 +21,13 @@ struct HomeView: View {
                 RandomGridView()
             }
             .tabItem {
-                Image(systemName: "circle.grid.cross.right.fill")
+                Image(systemName: "square.grid.3x3.bottomright.fill")
             }
             NavigationView {
                 RouletteView()
             }
             .tabItem {
-                Image(systemName: "sun.min.fill")
+                Image(systemName: "circles.hexagonpath.fill")
             }
             NavigationView {
                 SettingsView()
