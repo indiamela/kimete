@@ -18,4 +18,3 @@ struct kimeteApp: App {
         }
     }
 }
-    1
