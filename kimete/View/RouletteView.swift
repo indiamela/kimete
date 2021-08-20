@@ -24,6 +24,7 @@ struct RouletteView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
             RouletteView()
+                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }
 }

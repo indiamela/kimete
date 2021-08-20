@@ -16,33 +16,38 @@ struct HomeView: View {
         UITabBar.appearance().unselectedItemTintColor = UIColor.white
     }
     var body: some View {
-        TabView{
-            NavigationView{
-                RandomGridView()
+        ZStack {
+            Color.MyTheme.offWhite
+            TabView{
+                NavigationView{
+                    RandomGridView()
+                }
+                .tabItem {
+                    Image(systemName: "square.grid.3x3.bottomright.fill")
+                }
+                NavigationView {
+                    RouletteView()
+                }
+                .tabItem {
+                    Image(systemName: "circles.hexagonpath.fill")
+                }
+                NavigationView {
+                    SettingsView()
+                }
+                .tabItem {
+                    Image(systemName: "gearshape.fill")
+                }
             }
-            .tabItem {
-                Image(systemName: "square.grid.3x3.bottomright.fill")
-            }
-            NavigationView {
-                RouletteView()
-            }
-            .tabItem {
-                Image(systemName: "circles.hexagonpath.fill")
-            }
-            NavigationView {
-                SettingsView()
-            }
-            .tabItem {
-                Image(systemName: "gearshape.fill")
-            }
+            .accentColor(Color.MyTheme.redColor)
         }
-        .accentColor(Color.MyTheme.redColor)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        HomeView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

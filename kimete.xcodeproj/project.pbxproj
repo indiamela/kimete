@@ -20,6 +20,8 @@
 		F20F196726CB2D24003B37E0 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F196626CB2D24003B37E0 /* Color+Extension.swift */; };
 		F20F196926CC7D41003B37E0 /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F196826CC7D41003B37E0 /* GroupsView.swift */; };
 		F20F196E26CDBFAE003B37E0 /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F196D26CDBFAE003B37E0 /* ItemsView.swift */; };
+		F20F197026CDCE42003B37E0 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F196F26CDCE42003B37E0 /* SettingsLabelView.swift */; };
+		F241338F26CF27D200AF6C32 /* prototypeDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241338E26CF27D200AF6C32 /* prototypeDesignView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		F20F196626CB2D24003B37E0 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		F20F196826CC7D41003B37E0 /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
 		F20F196D26CDBFAE003B37E0 /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
+		F20F196F26CDCE42003B37E0 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
+		F241338E26CF27D200AF6C32 /* prototypeDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prototypeDesignView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 				F20F196426CB2BAD003B37E0 /* SettingsView.swift */,
 				F20F196826CC7D41003B37E0 /* GroupsView.swift */,
 				F20F196D26CDBFAE003B37E0 /* ItemsView.swift */,
+				F241338E26CF27D200AF6C32 /* prototypeDesignView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 		F20F195826C9D884003B37E0 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				F20F196F26CDCE42003B37E0 /* SettingsLabelView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -205,12 +211,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F241338F26CF27D200AF6C32 /* prototypeDesignView.swift in Sources */,
 				F20F195A26C9D955003B37E0 /* Constant.swift in Sources */,
 				F20F196526CB2BAD003B37E0 /* SettingsView.swift in Sources */,
 				F20F194B26C9D410003B37E0 /* Persistence.swift in Sources */,
 				F20F196E26CDBFAE003B37E0 /* ItemsView.swift in Sources */,
 				F20F194426C9D40E003B37E0 /* HomeView.swift in Sources */,
 				F20F196926CC7D41003B37E0 /* GroupsView.swift in Sources */,
+				F20F197026CDCE42003B37E0 /* SettingsLabelView.swift in Sources */,
 				F20F194E26C9D410003B37E0 /* kimete.xcdatamodeld in Sources */,
 				F20F196126CB2895003B37E0 /* RouletteView.swift in Sources */,
 				F20F196326CB28A4003B37E0 /* RandomGridView.swift in Sources */,

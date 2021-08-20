@@ -9,12 +9,20 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Text("SettingsView")
+        NavigationView{
+            ScrollView(.vertical, showsIndicators: false) {
+                
+                // MARK: SECTION SETTINGS
+            }
+        }
+        .navigationBarTitle("Settings", displayMode: .large)
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        NavigationView {
+            SettingsView()
+        }
     }
 }
