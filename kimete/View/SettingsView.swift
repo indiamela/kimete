@@ -16,33 +16,28 @@ struct SettingsView: View {
         ZStack {
             Color.MyTheme.offWhite
                 .edgesIgnoringSafeArea(.all)
-            ScrollView(.vertical, showsIndicators: false) {
+            VStack{
+                Spacer()
                 // MARK: SECTION SETTINGS
-                GroupBox(label:
-                            HStack{
-                                Text("Settings")
-                                Spacer()
-                            }
-                            .padding()
-                            
-                ) {
-                    SettingsToggleView(toggle: $soundFlg)
-                    SettingsToggleView(toggle: $vibrationFlg)
-                    SettingsToggleView(toggle: $quickMode)
-
-                    Button(action: {
-                        print("Button tapped")
-                    }) {
-                        Text("Placeholder")
-                            .foregroundColor(.gray)
-                    }
-                    .buttonStyle(SimpleButtonStyle())
+                GroupBox(label:SettingsLabelView(title: "Settings")) {
+                    SettingsToggleView(title: "サウンド",toggle: $soundFlg)
+                    SettingsToggleView(title: "バイブレーション",toggle: $vibrationFlg)
+                    SettingsToggleView(title: "クイックモード",toggle: $quickMode)
                 }
                 .groupBoxStyle(SimpleGroupBoxStyle())
                 Spacer()
+                GroupBox(label:SettingsLabelView(title: "About")) {
+                    SettingsButtonView(title: "App Storeで評価", action: settingsActions.evaluate)
+                    SettingsButtonView(title: "アプリをシェア", action: settingsActions.shareApp)
+                    SettingsButtonView(title: "開発者について", action: settingsActions.developer)
+                    SettingsButtonView(title: "プライバイシーポリシー", action: settingsActions.privacyPolicy)
+                }
+                .groupBoxStyle(SimpleGroupBoxStyle())
+
+                Spacer()
             }
         }
-//        .navigationBarTitle("Settings", displayMode: .large)
+        .navigationBarHidden(true)
     }
 }
 

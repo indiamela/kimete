@@ -22,6 +22,9 @@
 		F20F196E26CDBFAE003B37E0 /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F196D26CDBFAE003B37E0 /* ItemsView.swift */; };
 		F20F197026CDCE42003B37E0 /* SettingsToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F196F26CDCE42003B37E0 /* SettingsToggleView.swift */; };
 		F241338F26CF27D200AF6C32 /* prototypeDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241338E26CF27D200AF6C32 /* prototypeDesignView.swift */; };
+		F241339126D0C52000AF6C32 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241339026D0C52000AF6C32 /* SettingsLabelView.swift */; };
+		F241339326D0C75900AF6C32 /* SettingsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241339226D0C75900AF6C32 /* SettingsButtonView.swift */; };
+		F241339526D0C84600AF6C32 /* Structs&Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241339426D0C84600AF6C32 /* Structs&Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		F20F196D26CDBFAE003B37E0 /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
 		F20F196F26CDCE42003B37E0 /* SettingsToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsToggleView.swift; sourceTree = "<group>"; };
 		F241338E26CF27D200AF6C32 /* prototypeDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prototypeDesignView.swift; sourceTree = "<group>"; };
+		F241339026D0C52000AF6C32 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
+		F241339226D0C75900AF6C32 /* SettingsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonView.swift; sourceTree = "<group>"; };
+		F241339426D0C84600AF6C32 /* Structs&Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Structs&Enums.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				F20F196F26CDCE42003B37E0 /* SettingsToggleView.swift */,
+				F241339026D0C52000AF6C32 /* SettingsLabelView.swift */,
+				F241339226D0C75900AF6C32 /* SettingsButtonView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -138,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				F20F195926C9D955003B37E0 /* Constant.swift */,
+				F241339426D0C84600AF6C32 /* Structs&Enums.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -215,12 +224,15 @@
 				F20F195A26C9D955003B37E0 /* Constant.swift in Sources */,
 				F20F196526CB2BAD003B37E0 /* SettingsView.swift in Sources */,
 				F20F194B26C9D410003B37E0 /* Persistence.swift in Sources */,
+				F241339526D0C84600AF6C32 /* Structs&Enums.swift in Sources */,
 				F20F196E26CDBFAE003B37E0 /* ItemsView.swift in Sources */,
 				F20F194426C9D40E003B37E0 /* HomeView.swift in Sources */,
 				F20F196926CC7D41003B37E0 /* GroupsView.swift in Sources */,
 				F20F197026CDCE42003B37E0 /* SettingsToggleView.swift in Sources */,
 				F20F194E26C9D410003B37E0 /* kimete.xcdatamodeld in Sources */,
 				F20F196126CB2895003B37E0 /* RouletteView.swift in Sources */,
+				F241339326D0C75900AF6C32 /* SettingsButtonView.swift in Sources */,
+				F241339126D0C52000AF6C32 /* SettingsLabelView.swift in Sources */,
 				F20F196326CB28A4003B37E0 /* RandomGridView.swift in Sources */,
 				F20F196726CB2D24003B37E0 /* Color+Extension.swift in Sources */,
 				F20F194226C9D40E003B37E0 /* kimeteApp.swift in Sources */,

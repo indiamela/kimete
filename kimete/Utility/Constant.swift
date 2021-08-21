@@ -21,11 +21,11 @@ struct SimpleButtonStyle: ButtonStyle {
         let whiteShadow = Color.white.opacity(0.7)
                 configuration.label
                     .frame(width: UIScreen.main.bounds.width-30)
-                    .cornerRadius(10)
                     .padding(.vertical,20)
                     .background(
                             Rectangle()
                                 .fill(Color.MyTheme.offWhite)
+                                .cornerRadius(10)
                                 .shadow(color: configuration.isPressed ? blackShadow : whiteShadow , radius: 10, x: configuration.isPressed ? 10 : -5, y: configuration.isPressed ? 10 : -5)
                                 .shadow(color: configuration.isPressed ? whiteShadow : blackShadow , radius: 10, x: configuration.isPressed ? -5 : 10, y: configuration.isPressed ? -5 : 10)
                     )

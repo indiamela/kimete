@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SettingsToggleView: View {
+    @State var title: String
     @Binding var toggle: Bool
     
     var body: some View {
@@ -16,7 +17,7 @@ struct SettingsToggleView: View {
             .frame(height:60)
             .overlay(
                 HStack {
-                    Text("サウンド")
+                    Text(title)
                         .foregroundColor(.gray)
                     Spacer()
                     Toggle(isOn: $toggle, label: {
@@ -33,7 +34,7 @@ struct SettingsToggleView: View {
 struct SettingsToggleView_Previews: PreviewProvider {
     @State static var toggle: Bool = false
     static var previews: some View {
-        SettingsToggleView(toggle: $toggle)
+        SettingsToggleView(title: "サウンド", toggle: $toggle)
             .previewLayout(.sizeThatFits)
     }
 }
