@@ -14,7 +14,7 @@ struct prototypeDesignView: View {
             VStack {
                 RoundedRectangle(cornerRadius: 25)
                     .fill(Color.MyTheme.offWhite)
-                    .modifier(ConvexModifier(width: 200, height: 200))
+                    .modifier(ConvexModifier())
                 
                 Button(action: {
                     print("Button tapped")
