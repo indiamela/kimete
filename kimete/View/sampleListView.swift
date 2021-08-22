@@ -14,7 +14,8 @@ struct sampleListView: View {
     @FetchRequest(
         entity: Category.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \Category.id, ascending: true)]
-    ) private var categories: FetchedResults<Category>
+    )
+    private var categories: FetchedResults<Category>
     
     @State var newCategoryText: String = ""
     @State var newItemText: String = ""
@@ -73,7 +74,7 @@ struct sampleListView: View {
             }
             .onAppear {
                 /// Listビュー表示時に初期データ登録処理を実行
-//                registSampleData(context: viewContext)
+                registSampleData(context: viewContext)
             }
         }
     }

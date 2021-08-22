@@ -12,7 +12,7 @@ func registSampleData(context: NSManagedObjectContext) {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy/MM/dd"
     
-    /// Studentテーブル初期値
+    /// Itemテーブル初期値
     let itemList = [
         ["1", "カレー", Date()],
         ["2", "Mike", Date()],
@@ -68,5 +68,10 @@ func registSampleData(context: NSManagedObjectContext) {
     }
     
     /// コミット
-    try? context.save()
+    do {
+        try context.save()
+    } catch {
+        let nsError = error as NSError
+        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+    }
 }
