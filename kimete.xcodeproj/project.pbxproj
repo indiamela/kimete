@@ -25,6 +25,11 @@
 		F241339126D0C52000AF6C32 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241339026D0C52000AF6C32 /* SettingsLabelView.swift */; };
 		F241339326D0C75900AF6C32 /* SettingsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241339226D0C75900AF6C32 /* SettingsButtonView.swift */; };
 		F241339526D0C84600AF6C32 /* Structs&Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241339426D0C84600AF6C32 /* Structs&Enums.swift */; };
+		F24133A726D1CFED00AF6C32 /* UIStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133A626D1CFED00AF6C32 /* UIStyles.swift */; };
+		F24133AC26D1D41600AF6C32 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133A826D1D41600AF6C32 /* Category+CoreDataClass.swift */; };
+		F24133AD26D1D41600AF6C32 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133A926D1D41600AF6C32 /* Category+CoreDataProperties.swift */; };
+		F24133AE26D1D41600AF6C32 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133AA26D1D41600AF6C32 /* Item+CoreDataClass.swift */; };
+		F24133AF26D1D41600AF6C32 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133AB26D1D41600AF6C32 /* Item+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +53,11 @@
 		F241339026D0C52000AF6C32 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
 		F241339226D0C75900AF6C32 /* SettingsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonView.swift; sourceTree = "<group>"; };
 		F241339426D0C84600AF6C32 /* Structs&Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Structs&Enums.swift"; sourceTree = "<group>"; };
+		F24133A626D1CFED00AF6C32 /* UIStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyles.swift; sourceTree = "<group>"; };
+		F24133A826D1D41600AF6C32 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F24133A926D1D41600AF6C32 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F24133AA26D1D41600AF6C32 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F24133AB26D1D41600AF6C32 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +122,10 @@
 		F20F195626C9D865003B37E0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F24133A826D1D41600AF6C32 /* Category+CoreDataClass.swift */,
+				F24133A926D1D41600AF6C32 /* Category+CoreDataProperties.swift */,
+				F24133AA26D1D41600AF6C32 /* Item+CoreDataClass.swift */,
+				F24133AB26D1D41600AF6C32 /* Item+CoreDataProperties.swift */,
 				F20F194C26C9D410003B37E0 /* kimete.xcdatamodeld */,
 				F20F194A26C9D410003B37E0 /* Persistence.swift */,
 			);
@@ -146,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				F20F195926C9D955003B37E0 /* Constant.swift */,
+				F24133A626D1CFED00AF6C32 /* UIStyles.swift */,
 				F241339426D0C84600AF6C32 /* Structs&Enums.swift */,
 			);
 			path = Utility;
@@ -220,18 +235,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F24133AF26D1D41600AF6C32 /* Item+CoreDataProperties.swift in Sources */,
 				F241338F26CF27D200AF6C32 /* prototypeDesignView.swift in Sources */,
 				F20F195A26C9D955003B37E0 /* Constant.swift in Sources */,
 				F20F196526CB2BAD003B37E0 /* SettingsView.swift in Sources */,
 				F20F194B26C9D410003B37E0 /* Persistence.swift in Sources */,
+				F24133A726D1CFED00AF6C32 /* UIStyles.swift in Sources */,
 				F241339526D0C84600AF6C32 /* Structs&Enums.swift in Sources */,
 				F20F196E26CDBFAE003B37E0 /* ItemsView.swift in Sources */,
+				F24133AC26D1D41600AF6C32 /* Category+CoreDataClass.swift in Sources */,
 				F20F194426C9D40E003B37E0 /* HomeView.swift in Sources */,
 				F20F196926CC7D41003B37E0 /* GroupsView.swift in Sources */,
+				F24133AE26D1D41600AF6C32 /* Item+CoreDataClass.swift in Sources */,
 				F20F197026CDCE42003B37E0 /* SettingsToggleView.swift in Sources */,
 				F20F194E26C9D410003B37E0 /* kimete.xcdatamodeld in Sources */,
 				F20F196126CB2895003B37E0 /* RouletteView.swift in Sources */,
 				F241339326D0C75900AF6C32 /* SettingsButtonView.swift in Sources */,
+				F24133AD26D1D41600AF6C32 /* Category+CoreDataProperties.swift in Sources */,
 				F241339126D0C52000AF6C32 /* SettingsLabelView.swift in Sources */,
 				F20F196326CB28A4003B37E0 /* RandomGridView.swift in Sources */,
 				F20F196726CB2D24003B37E0 /* Color+Extension.swift in Sources */,

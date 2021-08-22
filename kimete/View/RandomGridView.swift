@@ -30,15 +30,15 @@ struct RandomGridView: View {
         
         // TODO LazyVStack 以外にも UI コンポーネントは色々あるため要調査
         LazyVStack {
-                    LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(symbols) { symbol in
-                            VStack {
-                                Image(systemName: symbol.image)
-                                Text(symbol.name)
-                            }
-                        }
+            LazyVGrid(columns: columns, spacing: 20) {
+                ForEach(symbols) { symbol in
+                    VStack {
+                        Image(systemName: symbol.image)
+                        Text(symbol.name)
                     }
-                    .padding()
+                }
+            }
+            .padding()
             
             Group{
                 Button(action: {
