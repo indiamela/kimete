@@ -18,7 +18,7 @@ extension Category {
 
     @NSManaged public var timestamp: Date?
     @NSManaged public var name: String?
-    @NSManaged public var selectedAmount: Int32
+    @NSManaged public var id: String?
     @NSManaged public var items: NSSet?
 
 }

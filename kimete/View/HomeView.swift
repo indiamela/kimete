@@ -20,7 +20,8 @@ struct HomeView: View {
             Color.MyTheme.offWhite
             TabView{
                 NavigationView{
-                    RandomGridView()
+                    sampleListView()
+//                    RandomGridView()
                 }
                 .tabItem {
                     Image(systemName: "square.grid.3x3.bottomright.fill")

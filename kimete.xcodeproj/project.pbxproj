@@ -28,8 +28,10 @@
 		F24133A726D1CFED00AF6C32 /* UIStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133A626D1CFED00AF6C32 /* UIStyles.swift */; };
 		F24133AC26D1D41600AF6C32 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133A826D1D41600AF6C32 /* Category+CoreDataClass.swift */; };
 		F24133AD26D1D41600AF6C32 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133A926D1D41600AF6C32 /* Category+CoreDataProperties.swift */; };
-		F24133AE26D1D41600AF6C32 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133AA26D1D41600AF6C32 /* Item+CoreDataClass.swift */; };
-		F24133AF26D1D41600AF6C32 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133AB26D1D41600AF6C32 /* Item+CoreDataProperties.swift */; };
+		F24133B126D1D5DE00AF6C32 /* registerSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133B026D1D5DE00AF6C32 /* registerSampleData.swift */; };
+		F24133B426D1D6C700AF6C32 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133B226D1D6C700AF6C32 /* Item+CoreDataClass.swift */; };
+		F24133B526D1D6C700AF6C32 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133B326D1D6C700AF6C32 /* Item+CoreDataProperties.swift */; };
+		F24133D926D255C700AF6C32 /* sampleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133D826D255C700AF6C32 /* sampleListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,8 +58,10 @@
 		F24133A626D1CFED00AF6C32 /* UIStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyles.swift; sourceTree = "<group>"; };
 		F24133A826D1D41600AF6C32 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F24133A926D1D41600AF6C32 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F24133AA26D1D41600AF6C32 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F24133AB26D1D41600AF6C32 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F24133B026D1D5DE00AF6C32 /* registerSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerSampleData.swift; sourceTree = "<group>"; };
+		F24133B226D1D6C700AF6C32 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F24133B326D1D6C700AF6C32 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F24133D826D255C700AF6C32 /* sampleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,10 +128,11 @@
 			children = (
 				F24133A826D1D41600AF6C32 /* Category+CoreDataClass.swift */,
 				F24133A926D1D41600AF6C32 /* Category+CoreDataProperties.swift */,
-				F24133AA26D1D41600AF6C32 /* Item+CoreDataClass.swift */,
-				F24133AB26D1D41600AF6C32 /* Item+CoreDataProperties.swift */,
+				F24133B226D1D6C700AF6C32 /* Item+CoreDataClass.swift */,
+				F24133B326D1D6C700AF6C32 /* Item+CoreDataProperties.swift */,
 				F20F194C26C9D410003B37E0 /* kimete.xcdatamodeld */,
 				F20F194A26C9D410003B37E0 /* Persistence.swift */,
+				F24133B026D1D5DE00AF6C32 /* registerSampleData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 				F20F196826CC7D41003B37E0 /* GroupsView.swift */,
 				F20F196D26CDBFAE003B37E0 /* ItemsView.swift */,
 				F241338E26CF27D200AF6C32 /* prototypeDesignView.swift */,
+				F24133D826D255C700AF6C32 /* sampleListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,7 +241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F24133AF26D1D41600AF6C32 /* Item+CoreDataProperties.swift in Sources */,
 				F241338F26CF27D200AF6C32 /* prototypeDesignView.swift in Sources */,
 				F20F195A26C9D955003B37E0 /* Constant.swift in Sources */,
 				F20F196526CB2BAD003B37E0 /* SettingsView.swift in Sources */,
@@ -245,17 +250,20 @@
 				F20F196E26CDBFAE003B37E0 /* ItemsView.swift in Sources */,
 				F24133AC26D1D41600AF6C32 /* Category+CoreDataClass.swift in Sources */,
 				F20F194426C9D40E003B37E0 /* HomeView.swift in Sources */,
+				F24133B126D1D5DE00AF6C32 /* registerSampleData.swift in Sources */,
 				F20F196926CC7D41003B37E0 /* GroupsView.swift in Sources */,
-				F24133AE26D1D41600AF6C32 /* Item+CoreDataClass.swift in Sources */,
+				F24133B426D1D6C700AF6C32 /* Item+CoreDataClass.swift in Sources */,
 				F20F197026CDCE42003B37E0 /* SettingsToggleView.swift in Sources */,
 				F20F194E26C9D410003B37E0 /* kimete.xcdatamodeld in Sources */,
 				F20F196126CB2895003B37E0 /* RouletteView.swift in Sources */,
 				F241339326D0C75900AF6C32 /* SettingsButtonView.swift in Sources */,
+				F24133B526D1D6C700AF6C32 /* Item+CoreDataProperties.swift in Sources */,
 				F24133AD26D1D41600AF6C32 /* Category+CoreDataProperties.swift in Sources */,
 				F241339126D0C52000AF6C32 /* SettingsLabelView.swift in Sources */,
 				F20F196326CB28A4003B37E0 /* RandomGridView.swift in Sources */,
 				F20F196726CB2D24003B37E0 /* Color+Extension.swift in Sources */,
 				F20F194226C9D40E003B37E0 /* kimeteApp.swift in Sources */,
+				F24133D926D255C700AF6C32 /* sampleListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
