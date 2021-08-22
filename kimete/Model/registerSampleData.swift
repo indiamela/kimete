@@ -15,13 +15,13 @@ func registSampleData(context: NSManagedObjectContext) {
     /// Studentテーブル初期値
     let itemList = [
         ["1", "カレー", Date()],
-        ["2", "シチュー", Date()],
+        ["2", "Mike", Date()],
         ["1", "パン", Date()],
-        ["2", "パスタ", Date()],
-        ["1", "そば", Date()]
+        ["2", "Kate", Date()],
+        ["3", "???", Date()]
     ]
         
-    /// Clubテーブル初期値
+    /// Categoryテーブル初期値
     let categoryList = [
         ["1","ごはん", Date()],
         ["2","掃除担当",Date()]
@@ -46,9 +46,9 @@ func registSampleData(context: NSManagedObjectContext) {
     /// Categoryテーブル登録
     for category in categoryList {
         let newCategory = Category(context: context)
-        newCategory.id = category[0] as? String
-        newCategory.name = category[1] as? String  // カテゴリ名
-        newCategory.timestamp = Date()   // 担任
+        newCategory.id = UUID().uuidString
+        newCategory.name = category[1] as? String
+        newCategory.timestamp = Date()
     }
     
     /// Itemテーブル登録
