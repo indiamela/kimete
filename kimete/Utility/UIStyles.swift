@@ -112,3 +112,26 @@ struct CircleModifier: ViewModifier {
             .frame(width: width, height: height)
     }
 }
+
+struct TextFieldModifier: ViewModifier {
+    let width: CGFloat
+    let height: CGFloat
+    func body(content: Content) -> some View {
+        content
+            .overlay(
+                Rectangle()
+                    .stroke(Color.gray, lineWidth: 4)
+                    .blur(radius: 4)
+//                    .offset(x: 2, y: 2)
+                    .mask(Rectangle().fill(LinearGradient(Color.black, Color.clear)))
+            )
+            .overlay(
+                Rectangle()
+                    .stroke(Color.white, lineWidth: 8)
+                    .blur(radius: 4)
+//                    .offset(x: -2, y: -2)
+                    .mask(Rectangle().fill(LinearGradient(Color.clear, Color.black)))
+            )
+            .frame(width: width, height: height)
+    }
+}

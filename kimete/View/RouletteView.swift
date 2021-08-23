@@ -16,28 +16,27 @@ struct RouletteView: View {
 
     
     var body: some View {
-        List {
-            VStack(alignment: .leading) {
-                ForEach(categories) { category in
-                    ForEach(itemArray(category.items), id: \.self) { item in
+        VStack {
+            VStack(alignment:.leading){
+                List{
+                    ForEach(itemArray(categories[0].items), id: \.self) { item in
                         Text("\(item.name ?? "")")
                     }
                 }
             }
+            .onAppear {
+                registSampleData(context: viewContext)
+            }
+            .listStyle(InsetGroupedListStyle())
+            .toolbar {
+                NavigationLink(
+                    destination: CategoryView(),
+                    label: {
+                        Image(systemName: "line.horizontal.3")
+                    })
+            }
         }
-        .onAppear {
-            registSampleData(context: viewContext)
-        }
-        .listStyle(InsetGroupedListStyle())
-
-        .toolbar {
-            NavigationLink(
-                destination: GroupsView(),
-                label: {
-                    Image(systemName: "line.horizontal.3")
-                })
-        }
-
+        
     }
     private func addItem(category: Category) {
         withAnimation {
