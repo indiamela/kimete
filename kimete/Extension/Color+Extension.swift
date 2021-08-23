@@ -14,6 +14,8 @@ extension Color{
         static var redColor:Color{
             return Color("Red")
         }
+        static let blackShadow = Color.black.opacity(0.2)
+        static let whiteShadow = Color.white.opacity(0.7)
     }
 }
 

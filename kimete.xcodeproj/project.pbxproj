@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,7 @@
 		F24133B426D1D6C700AF6C32 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133B226D1D6C700AF6C32 /* Item+CoreDataClass.swift */; };
 		F24133B526D1D6C700AF6C32 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133B326D1D6C700AF6C32 /* Item+CoreDataProperties.swift */; };
 		F24133D926D255C700AF6C32 /* sampleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133D826D255C700AF6C32 /* sampleListView.swift */; };
+		F24133DC26D4623600AF6C32 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = F24133DB26D4623600AF6C32 /* Neumorphic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F24133DC26D4623600AF6C32 /* Neumorphic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +190,9 @@
 			dependencies = (
 			);
 			name = kimete;
+			packageProductDependencies = (
+				F24133DB26D4623600AF6C32 /* Neumorphic */,
+			);
 			productName = kimete;
 			productReference = F20F193E26C9D40E003B37E0 /* kimete.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = F20F193526C9D40E003B37E0;
+			packageReferences = (
+				F24133DA26D4623600AF6C32 /* XCRemoteSwiftPackageReference "neumorphic" */,
+			);
 			productRefGroup = F20F193F26C9D40E003B37E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -452,6 +460,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F24133DA26D4623600AF6C32 /* XCRemoteSwiftPackageReference "neumorphic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/costachung/neumorphic/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F24133DB26D4623600AF6C32 /* Neumorphic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F24133DA26D4623600AF6C32 /* XCRemoteSwiftPackageReference "neumorphic" */;
+			productName = Neumorphic;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F20F194C26C9D410003B37E0 /* kimete.xcdatamodeld */ = {

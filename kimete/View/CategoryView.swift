@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Neumorphic
 
 struct CategoryView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -16,33 +17,41 @@ struct CategoryView: View {
     )
     private var categories: FetchedResults<Category>
     @State var newCategoryText: String = ""
-
+    
     var body: some View {
         ZStack{
             Color.MyTheme.offWhite
                 .edgesIgnoringSafeArea(.all)
             VStack{
-                HStack{
+                HStack {
                     TextField("add new group".uppercased(), text: $newCategoryText)
-                        .modifier(TextFieldModifier(width: 300, height: 10))
-
-                        
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.MyTheme.offWhite)
+                                .frame(height: 40)
+                                .softInnerShadow(RoundedRectangle(cornerRadius: 10), darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, spread: 0.5, radius: 2)
+                        )
                     Image(systemName: "plus.circle.fill")
                         .font(.title)
                 }
-
-
                 .padding()
                 List{
                     ForEach(categories) {category in
                         Text(category.name ?? "")
                     }
+//                    .listRowBackground(Color.green)
+
                 }
                 .cornerRadius(20)
+                .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 10, radius: 20)
+                
                 .padding()
-                .modifier(ConvexModifier())
+                .background(Color.clear)
                 .onAppear {
                     /// Listビュー表示時に初期データ登録処理を実行
+                    UITableView.appearance().backgroundColor = UIColor(Color.MyTheme.whiteShadow)
+
                     registSampleData(context: viewContext)
                 }
             }
