@@ -32,8 +32,13 @@ struct CategoryView: View {
                                 .frame(height: 40)
                                 .softInnerShadow(RoundedRectangle(cornerRadius: 10), darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, spread: 0.5, radius: 2)
                         )
-                    Image(systemName: "plus.circle.fill")
-                        .font(.title)
+                    
+                    Button(action: {
+                        addCategory()
+                    }, label: {
+                        Image(systemName: "plus.circle.fill")
+                            .font(.title)
+                    })
                 }
                 .padding()
                 List{
@@ -57,6 +62,24 @@ struct CategoryView: View {
             }
         }
     }
+    
+    private func addCategory() {
+        withAnimation {
+            let newCategory = Category(context: viewContext)
+            newCategory.id = UUID().uuidString
+            newCategory.name = newCategoryText
+            newCategory.timestamp = Date()
+            
+            do {
+                try viewContext.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
+        newCategoryText = ""
+    }
+
 }
 
 struct CategoryView_Previews: PreviewProvider {

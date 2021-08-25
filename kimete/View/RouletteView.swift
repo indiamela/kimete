@@ -19,9 +19,9 @@ struct RouletteView: View {
         VStack {
             VStack(alignment:.leading){
                 List{
-                    ForEach(itemArray(categories[0].items), id: \.self) { item in
-                        Text("\(item.name ?? "")")
-                    }
+//                    ForEach(itemArray(categories[0].items), id: \.self) { item in
+//                        Text("\(item.name ?? "")")
+//                    }
                 }
             }
             .onAppear {
