@@ -24,24 +24,7 @@ struct CategoryView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack{
                 addTextView(type: .category)
-//                HStack {
-//                    TextField("add new group".uppercased(), text: $newCategoryText)
-//                        .padding()
-//                        .background(
-//                            RoundedRectangle(cornerRadius: 10)
-//                                .fill(Color.MyTheme.offWhite)
-//                                .frame(height: 40)
-//                                .softInnerShadow(RoundedRectangle(cornerRadius: 10), darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, spread: 0.5, radius: 2)
-//                        )
-//
-//                    Button(action: {
-//                        addCategory()
-//                    }, label: {
-//                        Image(systemName: "plus.circle.fill")
-//                            .font(.title)
-//                    })
-//                }
-//                .padding()
+                .padding()
                 List{
                     ForEach(categories) {category in
                         NavigationLink(

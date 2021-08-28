@@ -34,19 +34,14 @@ struct addTextView: View {
     
     private func addCategory() {
         withAnimation {
-            let newCategory = Category(context: viewContext)
-            newCategory.id = UUID().uuidString
-            newCategory.name = text
-            newCategory.timestamp = Date()
-            
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            switch type {
+            case .category:
+                Category.create(in: viewContext, name: text)
+            case .item:
+                break
             }
+            text = ""
         }
-        text = ""
     }
 }
 

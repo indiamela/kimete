@@ -24,7 +24,7 @@ extension Category {
     static func create(in managedObjectContext:NSManagedObjectContext,
                        timestamp: Date? = Date(),
                        name: String,
-                       id: String) {
+                       id: String? = UUID().uuidString) {
         let category = self.init(context: managedObjectContext)
         print("create new category \(name)")
         category.id = id
