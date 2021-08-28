@@ -23,30 +23,34 @@ struct CategoryView: View {
             Color.MyTheme.offWhite
                 .edgesIgnoringSafeArea(.all)
             VStack{
-                HStack {
-                    TextField("add new group".uppercased(), text: $newCategoryText)
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.MyTheme.offWhite)
-                                .frame(height: 40)
-                                .softInnerShadow(RoundedRectangle(cornerRadius: 10), darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, spread: 0.5, radius: 2)
-                        )
-                    
-                    Button(action: {
-                        addCategory()
-                    }, label: {
-                        Image(systemName: "plus.circle.fill")
-                            .font(.title)
-                    })
-                }
-                .padding()
+                addTextView(type: .category)
+//                HStack {
+//                    TextField("add new group".uppercased(), text: $newCategoryText)
+//                        .padding()
+//                        .background(
+//                            RoundedRectangle(cornerRadius: 10)
+//                                .fill(Color.MyTheme.offWhite)
+//                                .frame(height: 40)
+//                                .softInnerShadow(RoundedRectangle(cornerRadius: 10), darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, spread: 0.5, radius: 2)
+//                        )
+//
+//                    Button(action: {
+//                        addCategory()
+//                    }, label: {
+//                        Image(systemName: "plus.circle.fill")
+//                            .font(.title)
+//                    })
+//                }
+//                .padding()
                 List{
                     ForEach(categories) {category in
-                        Text(category.name ?? "")
+                        NavigationLink(
+                            destination: ItemsView(),
+                            label: {
+                                Text(category.name ?? "")
+                            })
                     }
-//                    .listRowBackground(Color.green)
-
+                    .onDelete(perform: deleteCategory)
                 }
                 .cornerRadius(20)
                 .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 10, radius: 20)
@@ -56,8 +60,6 @@ struct CategoryView: View {
                 .onAppear {
                     /// Listビュー表示時に初期データ登録処理を実行
                     UITableView.appearance().backgroundColor = UIColor(Color.MyTheme.whiteShadow)
-
-                    registSampleData(context: viewContext)
                 }
             }
         }
@@ -79,6 +81,19 @@ struct CategoryView: View {
         }
         newCategoryText = ""
     }
+    
+    private func deleteCategory(offsets: IndexSet) {
+        for index in offsets {
+            let category = categories[index]
+            viewContext.delete(category)
+        }
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
 
 }
 
@@ -91,4 +106,9 @@ struct CategoryView_Previews: PreviewProvider {
 
         }
     }
+}
+
+enum createType {
+    case category
+    case item
 }

@@ -20,6 +20,24 @@ extension Category {
     @NSManaged public var name: String?
     @NSManaged public var id: String?
     @NSManaged public var items: NSSet?
+    
+    static func create(in managedObjectContext:NSManagedObjectContext,
+                       timestamp: Date? = Date(),
+                       name: String,
+                       id: String) {
+        let category = self.init(context: managedObjectContext)
+        print("create new category \(name)")
+        category.id = id
+        category.name = name
+        category.timestamp = timestamp
+        
+        do {
+            try managedObjectContext.save()
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+    }
 
 }
 

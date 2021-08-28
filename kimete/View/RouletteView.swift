@@ -24,9 +24,6 @@ struct RouletteView: View {
 //                    }
                 }
             }
-            .onAppear {
-                registSampleData(context: viewContext)
-            }
             .listStyle(InsetGroupedListStyle())
             .toolbar {
                 NavigationLink(

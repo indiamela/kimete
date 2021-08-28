@@ -33,6 +33,7 @@
 		F24133B526D1D6C700AF6C32 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133B326D1D6C700AF6C32 /* Item+CoreDataProperties.swift */; };
 		F24133D926D255C700AF6C32 /* sampleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24133D826D255C700AF6C32 /* sampleListView.swift */; };
 		F24133DC26D4623600AF6C32 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = F24133DB26D4623600AF6C32 /* Neumorphic */; };
+		F2C3298026DA0F7100B45A3C /* addTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C3297F26DA0F7000B45A3C /* addTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		F24133B226D1D6C700AF6C32 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F24133B326D1D6C700AF6C32 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F24133D826D255C700AF6C32 /* sampleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleListView.swift; sourceTree = "<group>"; };
+		F2C3297F26DA0F7000B45A3C /* addTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				F20F196F26CDCE42003B37E0 /* SettingsToggleView.swift */,
 				F241339026D0C52000AF6C32 /* SettingsLabelView.swift */,
 				F241339226D0C75900AF6C32 /* SettingsButtonView.swift */,
+				F2C3297F26DA0F7000B45A3C /* addTextView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				F20F196526CB2BAD003B37E0 /* SettingsView.swift in Sources */,
 				F20F194B26C9D410003B37E0 /* Persistence.swift in Sources */,
 				F24133A726D1CFED00AF6C32 /* UIStyles.swift in Sources */,
+				F2C3298026DA0F7100B45A3C /* addTextView.swift in Sources */,
 				F241339526D0C84600AF6C32 /* Structs&Enums.swift in Sources */,
 				F20F196E26CDBFAE003B37E0 /* ItemsView.swift in Sources */,
 				F24133AC26D1D41600AF6C32 /* Category+CoreDataClass.swift in Sources */,
