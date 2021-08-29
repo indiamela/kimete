@@ -28,7 +28,7 @@ struct CategoryView: View {
                 List{
                     ForEach(categories) {category in
                         NavigationLink(
-                            destination: ItemsView(),
+                            destination: ItemsView(category: category),
                             label: {
                                 Text(category.name ?? "")
                             })
@@ -47,24 +47,7 @@ struct CategoryView: View {
             }
         }
     }
-    
-    private func addCategory() {
-        withAnimation {
-            let newCategory = Category(context: viewContext)
-            newCategory.id = UUID().uuidString
-            newCategory.name = newCategoryText
-            newCategory.timestamp = Date()
-            
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-        newCategoryText = ""
-    }
-    
+        
     private func deleteCategory(offsets: IndexSet) {
         for index in offsets {
             let category = categories[index]

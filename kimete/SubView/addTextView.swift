@@ -11,6 +11,7 @@ struct addTextView: View {
     @Environment(\.managedObjectContext) private var viewContext
     var type: createType
     @State var text = ""
+    var categoryID: String?
     
     var body: some View {
         HStack {
@@ -24,7 +25,7 @@ struct addTextView: View {
                 )
             
             Button(action: {
-                addCategory()
+                addText()
             }, label: {
                 Image(systemName: "plus.circle.fill")
                     .font(.title)
@@ -32,13 +33,14 @@ struct addTextView: View {
         }
     }
     
-    private func addCategory() {
+    private func addText() {
+        guard text.count > 0 else { return }
         withAnimation {
             switch type {
             case .category:
                 Category.create(in: viewContext, name: text)
             case .item:
-                break
+                Item.create(in: viewContext, name: text, categoryID: categoryID!)
             }
             text = ""
         }

@@ -31,6 +31,7 @@ extension Item {
         newItem.name = name
         newItem.timestamp = timestamp
         let fetchRequestCategory = NSFetchRequest<NSFetchRequestResult>()
+        fetchRequestCategory.entity = Category.entity()
         fetchRequestCategory.predicate = NSPredicate(format: "id = %@", categoryID as CVarArg)
         let result = try? managedObjectContext.fetch(fetchRequestCategory) as? [Category]
         if result!.count > 0 {
