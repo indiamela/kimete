@@ -11,9 +11,7 @@ struct RouletteView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(entity: Category.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Category.id, ascending: true)])
     private var categories: FetchedResults<Category>
-//    @State var category: Category
-    @State var newItemText: String = ""
-
+    @State var selected: Int = 0
     
     var body: some View {
         ZStack{
@@ -23,7 +21,9 @@ struct RouletteView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack{
                         ForEach(categories){ category in
-                            Button(action: {}) {
+                            Button(action: {
+
+                            }) {
                                 Text(category.name ?? "")
                                     .frame(width: 70, height: 20, alignment: .center)
                             }
@@ -32,20 +32,23 @@ struct RouletteView: View {
                         }
                     }
                 }
-                Spacer()
-//                List{
-//                    ForEach(itemArray(category.items)){ item in
-//                        Text(item.name ?? "")
-//                    }
-//                }
-//                .cornerRadius(20)
-//                .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 10, radius: 20)
-//                .padding()
-//                .background(Color.clear)
-//                .onAppear {
-//                    /// Listビュー表示時に初期データ登録処理を実行
-//                    UITableView.appearance().backgroundColor = UIColor(Color.MyTheme.whiteShadow)
-//                }
+                List{
+                    if let category = categories[selected] {
+                        ForEach(itemArray(category.items)){ item in
+                            Text(item.name ?? "")
+                        }
+                    } else {
+                        Text("カテゴリを作成してください")
+                    }
+                }
+                .cornerRadius(20)
+                .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 10, radius: 20)
+                .padding()
+                .background(Color.clear)
+                .onAppear {
+                    /// Listビュー表示時に初期データ登録処理を実行
+                    UITableView.appearance().backgroundColor = UIColor(Color.MyTheme.whiteShadow)
+                }
             }
         }
         .toolbar {
@@ -55,6 +58,10 @@ struct RouletteView: View {
                     Image(systemName: "line.horizontal.3")
                 })
         }
+    }
+    
+    private func switchCategory(offsets: IndexSet) {
+        
     }
     
     /// NSSet? → [Item]変換

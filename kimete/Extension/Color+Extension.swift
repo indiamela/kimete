@@ -10,7 +10,7 @@ import SwiftUI
 
 extension Color{
     struct MyTheme{
-        static let offWhite = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
+        static let offWhite = Color.Neumorphic.main
         static var redColor:Color{
             return Color("Red")
         }
