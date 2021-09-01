@@ -20,18 +20,22 @@ struct RouletteView: View {
             VStack{
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack{
-                        ForEach(categories){ category in
+                        ForEach(0..<categories.count){ i in
                             Button(action: {
-
+                                selected =  i
                             }) {
-                                Text(category.name ?? "")
-                                    .frame(width: 70, height: 20, alignment: .center)
+                                if let category = categories[i] {
+                                    Text(category.name ?? "")
+                                        .frame(width: 70, height: 20, alignment: .center)
+                                }
                             }
                             .softButtonStyle(RoundedRectangle(cornerRadius: 20))
                             .padding()
                         }
                     }
                 }
+                
+                /// テスト用リスト
                 List{
                     if let category = categories[selected] {
                         ForEach(itemArray(category.items)){ item in
@@ -60,8 +64,8 @@ struct RouletteView: View {
         }
     }
     
-    private func switchCategory(offsets: IndexSet) {
-        
+    private func switchCategory(index:Int) {
+        selected = index
     }
     
     /// NSSet? → [Item]変換
