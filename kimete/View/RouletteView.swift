@@ -31,7 +31,7 @@ struct RouletteView: View {
                             }
                             .softButtonStyle(RoundedRectangle(cornerRadius: 20))
                             .padding()
-                        }
+                        } 
                     }
                 }
                 
