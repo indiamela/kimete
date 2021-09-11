@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Neumorphic
+import CoreData
 
 struct CategoryView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -37,13 +38,7 @@ struct CategoryView: View {
                 }
                 .cornerRadius(20)
                 .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 10, radius: 20)
-                
                 .padding()
-                .background(Color.clear)
-                .onAppear {
-                    /// Listビュー表示時に初期データ登録処理を実行
-                    UITableView.appearance().backgroundColor = UIColor(Color.MyTheme.whiteShadow)
-                }
             }
         }
     }

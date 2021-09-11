@@ -51,7 +51,7 @@ struct RouletteView: View {
                 .background(Color.clear)
                 .onAppear {
                     /// Listビュー表示時に初期データ登録処理を実行
-                    UITableView.appearance().backgroundColor = UIColor(Color.MyTheme.whiteShadow)
+//                    UITableView.appearance().backgroundColor = UIColor(Color.MyTheme.whiteShadow)
                 }
             }
         }
