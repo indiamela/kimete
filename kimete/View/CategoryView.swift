@@ -18,13 +18,14 @@ struct CategoryView: View {
     )
     private var categories: FetchedResults<Category>
     @State var newCategoryText: String = ""
+
     
     var body: some View {
         ZStack{
             Color.MyTheme.offWhite
                 .edgesIgnoringSafeArea(.all)
             VStack{
-                addTextView(type: .category)
+                AddTextView(type: .category)
                 .padding()
                 List{
                     ForEach(categories) {category in
@@ -32,10 +33,13 @@ struct CategoryView: View {
                             destination: ItemsView(category: category),
                             label: {
                                 Text(category.name ?? "")
+//                                CardCollectionView(text: category.name ?? "")
                             })
+                            .listRowBackground(Color.MyTheme.offWhite)
                     }
                     .onDelete(perform: deleteCategory)
                 }
+                .listStyle(SidebarListStyle())
                 .cornerRadius(20)
                 .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 10, radius: 20)
                 .padding()

@@ -22,7 +22,7 @@ struct ItemsView: View {
             Color.MyTheme.offWhite
                 .edgesIgnoringSafeArea(.all)
             VStack{
-                addTextView(type: .item, categoryID: category.id)
+                AddTextView(type: .item, categoryID: category.id)
                 .padding()
                 List{
                     ForEach(itemArray(category.items)){ item in

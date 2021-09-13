@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct addTextView: View {
+struct AddTextView: View {
     @Environment(\.managedObjectContext) private var viewContext
     var type: createType
     @State var text = ""
@@ -47,8 +47,8 @@ struct addTextView: View {
     }
 }
 
-struct addTextView_Previews: PreviewProvider {
+struct AddTextView_Previews: PreviewProvider {
     static var previews: some View {
-        addTextView(type: .category)
+        AddTextView(type: .category)
     }
 }
