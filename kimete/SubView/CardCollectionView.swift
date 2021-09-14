@@ -10,10 +10,9 @@ import SwiftUI
 struct CardCollectionView: View {
     var text: String
     var body: some View {
-        RoundedRectangle(cornerRadius: 10)
+        Rectangle()
             .fill(Color.Neumorphic.main)
-            .frame(width: UIScreen.main.bounds.width, height: 40, alignment: .center)
-            .softInnerShadow(RoundedRectangle(cornerRadius: 10))
+            .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 50, alignment: .center)
             .overlay(
                 HStack {
                     Text(text)
@@ -21,6 +20,7 @@ struct CardCollectionView: View {
                 }
                 .padding(.horizontal)
             )
+            .foregroundColor(.black)
     }
 }
 

@@ -18,6 +18,7 @@ struct CategoryView: View {
     )
     private var categories: FetchedResults<Category>
     @State var newCategoryText: String = ""
+    @State var showAlert: Bool = false
 
     
     var body: some View {
@@ -26,32 +27,30 @@ struct CategoryView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack{
                 AddTextView(type: .category)
-                .padding()
-                List{
+                    .padding(.bottom,30)
                     ForEach(categories) {category in
                         NavigationLink(
                             destination: ItemsView(category: category),
                             label: {
-                                Text(category.name ?? "")
-//                                CardCollectionView(text: category.name ?? "")
+                                CardCollectionView(text: category.name ?? "")
+                                // TODO: listをなしにした場合削除アラートはどうするか
                             })
                             .listRowBackground(Color.MyTheme.offWhite)
                     }
-                    .onDelete(perform: deleteCategory)
-                }
                 .listStyle(SidebarListStyle())
                 .cornerRadius(20)
-                .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 10, radius: 20)
-                .padding()
+                .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 2, radius: 2)
+                    .padding(.bottom)
+                Spacer()
             }
+            .padding()
+            .accentColor(Color.MyTheme.redColor)
         }
     }
         
-    private func deleteCategory(offsets: IndexSet) {
-        for index in offsets {
-            let category = categories[index]
-            viewContext.delete(category)
-        }
+    private func deleteCategory(category: Category) {
+        let category = category
+        viewContext.delete(category)
         do {
             try viewContext.save()
         } catch {

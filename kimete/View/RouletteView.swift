@@ -19,20 +19,20 @@ struct RouletteView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack{
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack{
-                        ForEach(0..<categories.count){ i in
-                            Button(action: {
-                                selected =  i
-                            }) {
-                                if let category = categories[i] {
-                                    Text(category.name ?? "")
-                                        .frame(width: 70, height: 20, alignment: .center)
-                                }
-                            }
-                            .softButtonStyle(RoundedRectangle(cornerRadius: 20))
-                            .padding()
-                        }
-                    }
+//                    HStack{
+//                        ForEach(0..<categories.count){ i in
+//                            Button(action: {
+//                                selected =  i
+//                            }) {
+//                                if let category = categories[i] {
+//                                    Text(category.name ?? "")
+//                                        .frame(width: 70, height: 20, alignment: .center)
+//                                }
+//                            }
+//                            .softButtonStyle(RoundedRectangle(cornerRadius: 20))
+//                            .padding()
+//                        }
+//                    }
                 }
                 
                 /// テスト用リスト
