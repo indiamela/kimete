@@ -19,6 +19,8 @@ struct CategoryView: View {
     private var categories: FetchedResults<Category>
     @State var newCategoryText: String = ""
     @State var showAlert: Bool = false
+    @State var tapItem: Bool = false
+    @State var text = ""
 
     
     var body: some View {
@@ -28,19 +30,25 @@ struct CategoryView: View {
             VStack{
                 AddTextView(type: .category)
                     .padding(.bottom,30)
+                List {
                     ForEach(categories) {category in
-                        NavigationLink(
-                            destination: ItemsView(category: category),
-                            label: {
-                                CardCollectionView(text: category.name ?? "")
-                                // TODO: listをなしにした場合削除アラートはどうするか
+                        Text(category.name ?? "")
+                            .onTapGesture {
+                                tapItem.toggle()
+                            }
+                            .sheet(isPresented: $tapItem, content: {
+                                ItemsView(category: category)
                             })
                             .listRowBackground(Color.MyTheme.offWhite)
                     }
-                .listStyle(SidebarListStyle())
+                    .onDelete(perform:deleteCategory)
+                }
+                .onAppear {
+                    UITableView.appearance().backgroundColor = UIColor(Color.MyTheme.offWhite)
+                }
+                .listStyle(InsetGroupedListStyle())
                 .cornerRadius(20)
                 .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 2, radius: 2)
-                    .padding(.bottom)
                 Spacer()
             }
             .padding()
@@ -48,9 +56,11 @@ struct CategoryView: View {
         }
     }
         
-    private func deleteCategory(category: Category) {
-        let category = category
-        viewContext.delete(category)
+    private func deleteCategory(offsets: IndexSet) {
+        for index in offsets {
+            let category = categories[index]
+            viewContext.delete(category)
+        }
         do {
             try viewContext.save()
         } catch {
@@ -58,7 +68,6 @@ struct CategoryView: View {
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
-
 }
 
 struct CategoryView_Previews: PreviewProvider {

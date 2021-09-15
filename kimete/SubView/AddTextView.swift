@@ -15,7 +15,7 @@ struct AddTextView: View {
     
     var body: some View {
         HStack {
-            TextField("add new group".uppercased(), text: $text)
+            TextField((type == .category ? "add new group" : "add new item").uppercased(), text: $text)
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 10)
@@ -35,7 +35,6 @@ struct AddTextView: View {
     
     private func addText() {
         guard text.count > 0 else { return }
-        withAnimation {
             switch type {
             case .category:
                 Category.create(in: viewContext, name: text)
@@ -43,7 +42,6 @@ struct AddTextView: View {
                 Item.create(in: viewContext, name: text, categoryID: categoryID!)
             }
             text = ""
-        }
     }
 }
 

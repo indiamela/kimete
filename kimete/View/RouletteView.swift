@@ -36,23 +36,19 @@ struct RouletteView: View {
                 }
                 
                 /// テスト用リスト
-                List{
-                    if let category = categories[selected] {
-                        ForEach(itemArray(category.items)){ item in
-                            Text(item.name ?? "")
-                        }
-                    } else {
-                        Text("カテゴリを作成してください")
-                    }
-                }
-                .cornerRadius(20)
-                .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 10, radius: 20)
-                .padding()
-                .background(Color.clear)
-                .onAppear {
-                    /// Listビュー表示時に初期データ登録処理を実行
-//                    UITableView.appearance().backgroundColor = UIColor(Color.MyTheme.whiteShadow)
-                }
+//                List{
+//                    if let category = categories[selected] {
+//                        ForEach(itemArray(category.items)){ item in
+//                            Text(item.name ?? "")
+//                        }
+//                    } else {
+//                        Text("カテゴリを作成してください")
+//                    }
+//                }
+//                .cornerRadius(20)
+//                .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 10, radius: 20)
+//                .padding()
+//                .background(Color.clear)
             }
         }
         .toolbar {
