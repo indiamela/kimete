@@ -21,7 +21,7 @@ struct CategoryView: View {
     @State var showAlert: Bool = false
     @State var tapItem: Bool = false
     @State var text = ""
-
+    
     
     var body: some View {
         ZStack{
@@ -29,7 +29,8 @@ struct CategoryView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack{
                 AddTextView(type: .category)
-                    .padding(.bottom,30)
+                    .padding()
+                    .padding(.bottom,20)
                 List {
                     ForEach(categories) {category in
                         Text(category.name ?? "")
@@ -46,16 +47,16 @@ struct CategoryView: View {
                 .onAppear {
                     UITableView.appearance().backgroundColor = UIColor(Color.MyTheme.offWhite)
                 }
-                .listStyle(InsetGroupedListStyle())
                 .cornerRadius(20)
                 .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 2, radius: 2)
+                .listStyle(InsetGroupedListStyle())
                 Spacer()
             }
             .padding()
             .accentColor(Color.MyTheme.redColor)
         }
     }
-        
+    
     private func deleteCategory(offsets: IndexSet) {
         for index in offsets {
             let category = categories[index]
@@ -76,7 +77,7 @@ struct CategoryView_Previews: PreviewProvider {
         NavigationView{
             CategoryView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-
+            
         }
     }
 }

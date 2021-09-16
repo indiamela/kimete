@@ -23,22 +23,25 @@ struct ItemsView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack{
                 AddTextView(type: .item, categoryID: category.id)
-                .padding()
+                    .padding()
+                    .padding(.vertical,20)
                 List{
                     ForEach(itemArray(category.items)){ item in
                         Text(item.name ?? "")
+                            .listRowBackground(Color.MyTheme.offWhite)
                     }
                     .onDelete(perform: deleteItem)
                 }
-                .cornerRadius(20)
-                .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 10, radius: 20)
-                .padding()
-                .background(Color.clear)
                 .onAppear {
-                    /// Listビュー表示時に初期データ登録処理を実行
-                    UITableView.appearance().backgroundColor = UIColor(Color.MyTheme.whiteShadow)
+                    UITableView.appearance().backgroundColor = UIColor(Color.MyTheme.offWhite)
                 }
+                .cornerRadius(20)
+                .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 2, radius: 2)
+                .listStyle(InsetGroupedListStyle())
+                Spacer()
             }
+            .padding()
+            .accentColor(Color.MyTheme.redColor)
         }
     }
     private func itemArray(_ items: NSSet?) -> [Item] {
@@ -47,7 +50,7 @@ struct ItemsView: View {
             $0.id < $1.id
         }
     }
-
+    
     
     private func deleteItem(offsets: IndexSet) {
         for index in offsets {
