@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17CF3DF426F15F1400D8334E /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 17CF3DF326F15F1400D8334E /* WaterfallGrid */; };
 		F20F194226C9D40E003B37E0 /* kimeteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F194126C9D40E003B37E0 /* kimeteApp.swift */; };
 		F20F194426C9D40E003B37E0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F194326C9D40E003B37E0 /* HomeView.swift */; };
 		F20F194626C9D410003B37E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F20F194526C9D410003B37E0 /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F24133DC26D4623600AF6C32 /* Neumorphic in Frameworks */,
+				17CF3DF426F15F1400D8334E /* WaterfallGrid in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +200,7 @@
 			name = kimete;
 			packageProductDependencies = (
 				F24133DB26D4623600AF6C32 /* Neumorphic */,
+				17CF3DF326F15F1400D8334E /* WaterfallGrid */,
 			);
 			productName = kimete;
 			productReference = F20F193E26C9D40E003B37E0 /* kimete.app */;
@@ -228,6 +231,7 @@
 			mainGroup = F20F193526C9D40E003B37E0;
 			packageReferences = (
 				F24133DA26D4623600AF6C32 /* XCRemoteSwiftPackageReference "neumorphic" */,
+				17CF3DF226F15F1400D8334E /* XCRemoteSwiftPackageReference "WaterfallGrid" */,
 			);
 			productRefGroup = F20F193F26C9D40E003B37E0 /* Products */;
 			projectDirPath = "";
@@ -470,6 +474,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		17CF3DF226F15F1400D8334E /* XCRemoteSwiftPackageReference "WaterfallGrid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/paololeonardi/WaterfallGrid.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
 		F24133DA26D4623600AF6C32 /* XCRemoteSwiftPackageReference "neumorphic" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/costachung/neumorphic/";
@@ -481,6 +493,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		17CF3DF326F15F1400D8334E /* WaterfallGrid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17CF3DF226F15F1400D8334E /* XCRemoteSwiftPackageReference "WaterfallGrid" */;
+			productName = WaterfallGrid;
+		};
 		F24133DB26D4623600AF6C32 /* Neumorphic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F24133DA26D4623600AF6C32 /* XCRemoteSwiftPackageReference "neumorphic" */;

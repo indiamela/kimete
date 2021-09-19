@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WaterfallGrid
 
 struct Symbol: Identifiable {
     var id = UUID()
@@ -13,65 +14,46 @@ struct Symbol: Identifiable {
     var name: String
 }
 
+struct RectangleView: View {
+//    var color: Color
+    let image: Image
+    let textTitle: String
+    
+    var body: some View {
+        VStack {
+//            Rectangle()
+//                .fill(Color.red)
+//                .frame(width:100, height: 100)
+            Text("\(textTitle)")
+                .font(.title)
+            Image(systemName: "pencil.circle")
+            image
+        }
+    }
+}
+
 struct RandomGridView: View {
     var body: some View {
-
         
-        // TODO Symbol の記法について要確認 背景色つけるには？
-        let symbols = [Symbol(image: "drop.fill", name: "drop"),
-                           Symbol(image: "flame.fill", name: "flame"),
-                           Symbol(image: "bolt.fill", name: "bolt"),
-                           Symbol(image: "leaf.fill", name: "leaf"),
-                           Symbol(image: "hare.fill", name: "hare"),
-                           Symbol(image: "tortoise.fill", name: "tortoise")
-        ]
-        
-        let columns: [GridItem] = [GridItem(.adaptive(minimum: 100, maximum: 150))]
-        
-        // TODO LazyVStack 以外にも UI コンポーネントは色々あるため要調査
-        LazyVStack {
-            LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(symbols) { symbol in
-                    VStack {
-                        Image(systemName: symbol.image)
-                        Text(symbol.name)
-                    }
-                }
-            }
-            .padding()
-            
-            Group{
-                Button(action: {
-                    print("START ボタンが押された！")
-                }) {
-                    Image(systemName: "arrowtriangle.forward.fill")
-                        .foregroundColor(Color.black)
-                    Text("START")
-                        .foregroundColor(Color.black)
-                }
-                .padding()
-                .background(Color.gray)
-                .cornerRadius(24)
-            }
+//        TODO: くっすーになぜ表示されないのか確認する
+        WaterfallGrid((0..<10), id: \.self) { index in
+            Rectangle()
+                .fill(Color.blue)
+                .frame(width: 200, height: 200)
         }
 
-        
-
-
-//        Text("RandomGridView")
-//            .navigationBarTitle("NavigationBar", displayMode: .automatic)
-//            .navigationBarItems(trailing:Button(action: {
-//
-//            }, label: {
-//                Image(systemName: "line.horizontal.3")
-//            }))
     }
 }
 
 struct RandomGridView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            RandomGridView()
+            VStack {
+                RandomGridView()
+                RectangleView(
+                    image: Image(systemName: "pencil.circle"),
+                    textTitle: "testTitle です")
+            }
         }
     }
 }
