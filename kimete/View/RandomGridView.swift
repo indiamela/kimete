@@ -18,12 +18,12 @@ struct RectangleView: View {
 //    var color: Color
     let image: Image
     let textTitle: String
-    
+        
     var body: some View {
         VStack {
-//            Rectangle()
-//                .fill(Color.red)
-//                .frame(width:100, height: 100)
+            Rectangle()
+                .fill(Color.red)
+                .frame(width:100, height: 100)
             Text("\(textTitle)")
                 .font(.title)
             Image(systemName: "pencil.circle")
@@ -34,14 +34,13 @@ struct RectangleView: View {
 
 struct RandomGridView: View {
     var body: some View {
-        
-//        TODO: くっすーになぜ表示されないのか確認する
-        WaterfallGrid((0..<10), id: \.self) { index in
+
+        WaterfallGrid((0..<3), id: \.self) { index in
             Rectangle()
                 .fill(Color.blue)
                 .frame(width: 200, height: 200)
         }
-
+        .frame(height: 400)
     }
 }
 
