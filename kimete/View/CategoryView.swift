@@ -22,6 +22,7 @@ struct CategoryView: View {
     @State var tapItem: Bool = false
     @State var text = ""
     @State var index = 0
+    @AppStorage("category_index") var categoryIndex: Int?
     
     var body: some View {
         ZStack{
@@ -33,15 +34,25 @@ struct CategoryView: View {
                     .padding(.bottom,20)
                 List {
                     ForEach(categories) {category in
-                        Text(category.name ?? "")
-                            .onTapGesture {
-                                index = categories.firstIndex(where: {$0.name == category.name ?? ""})!
-                                tapItem.toggle()
+                        HStack {
+                            Button(action: {
+                                index = categories.firstIndex(where: {$0.id == category.id ?? ""})!
+                                UserDefaults.standard.setValue(index, forKey: "category_index")
+                            }) {
+                                Image(systemName: "heart.fill")
+                                    .frame(width: 10, height: 10)
                             }
-                            .sheet(isPresented: $tapItem, content: {
-                                ItemsView(categoryIndex: index)
-                            })
-                            .listRowBackground(Color.MyTheme.offWhite)
+                            .softButtonStyle(Circle())
+                            Text(category.name ?? "")
+                                .onTapGesture {
+                                    index = categories.firstIndex(where: {$0.id == category.id ?? ""})!
+                                    tapItem.toggle()
+                                }
+                        }
+                        .sheet(isPresented: $tapItem, content: {
+                            ItemsView(categoryIndex: index)
+                        })
+                        .listRowBackground(Color.MyTheme.offWhite)
                     }
                     .onDelete(perform:deleteCategory)
                 }

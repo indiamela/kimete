@@ -15,7 +15,7 @@ struct AddTextView: View {
     
     var body: some View {
         HStack {
-            TextField.init((type == .category ? "add new group" : "add new item").uppercased(), text: $text,onCommit: addText)
+            TextField.init((type == .category ? "add new category" : "add new item").uppercased(), text: $text,onCommit: addText)
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 10)

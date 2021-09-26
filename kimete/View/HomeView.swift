@@ -9,6 +9,9 @@ import SwiftUI
 import CoreData
 
 struct HomeView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(entity: Category.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Category.id, ascending: true)])
+    private var categories: FetchedResults<Category>
     init() {
         // 背景色を指定
         UITabBar.appearance().barTintColor = UIColor.black
