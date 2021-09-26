@@ -21,7 +21,7 @@ struct CategoryView: View {
     @State var showAlert: Bool = false
     @State var tapItem: Bool = false
     @State var text = ""
-    
+    @State var index = 0
     
     var body: some View {
         ZStack{
@@ -35,10 +35,11 @@ struct CategoryView: View {
                     ForEach(categories) {category in
                         Text(category.name ?? "")
                             .onTapGesture {
+                                index = categories.firstIndex(where: {$0.name == category.name ?? ""})!
                                 tapItem.toggle()
                             }
                             .sheet(isPresented: $tapItem, content: {
-                                ItemsView(category: category)
+                                ItemsView(categoryIndex: index)
                             })
                             .listRowBackground(Color.MyTheme.offWhite)
                     }

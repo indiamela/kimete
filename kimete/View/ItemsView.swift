@@ -15,13 +15,15 @@ struct ItemsView: View {
     )
     private var categories: FetchedResults<Category>
     @State var newCategoryText: String = ""
-    var category: Category
+    var categoryIndex: Int
     
     var body: some View {
+        let category = categories[categoryIndex]
         ZStack{
             Color.MyTheme.offWhite
                 .edgesIgnoringSafeArea(.all)
             VStack{
+                Text(category.name ?? "")
                 AddTextView(type: .item, categoryID: category.id)
                     .padding()
                     .padding(.vertical,20)
@@ -54,7 +56,7 @@ struct ItemsView: View {
     
     private func deleteItem(offsets: IndexSet) {
         for index in offsets {
-            let item = itemArray(category.items)[index]
+            let item = itemArray(categories[categoryIndex].items)[index]
             viewContext.delete(item)
         }
         do {
