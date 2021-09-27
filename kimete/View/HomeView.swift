@@ -21,9 +21,6 @@ struct HomeView: View {
             TabView{
                 NavigationView{
                     VStack {
-                        RectangleView(
-                            image: Image(systemName: "pencil.circle"),
-                            textTitle: "testTitle です")
                         RandomGridView()
                     }
                 }

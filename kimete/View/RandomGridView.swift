@@ -15,10 +15,10 @@ struct Symbol: Identifiable {
 }
 
 struct RectangleView: View {
-//    var color: Color
+    //    var color: Color
     let image: Image
     let textTitle: String
-        
+    
     var body: some View {
         VStack {
             Rectangle()
@@ -33,14 +33,60 @@ struct RectangleView: View {
 }
 
 struct RandomGridView: View {
+    @State var buttonText = "Start"
+    @State var totalGrids = 2;
+    
     var body: some View {
-
-        WaterfallGrid((0..<3), id: \.self) { index in
+        
+        WaterfallGrid((0..<totalGrids), id: \.self) { index in
             Rectangle()
                 .fill(Color.blue)
                 .frame(width: 200, height: 200)
         }
-        .frame(height: 400)
+        
+        Spacer()
+            .frame(height: 20)
+        
+        Button(action: {
+            buttonText = "Button Tapped"
+        }){
+            Text(buttonText)
+                .font(.largeTitle)
+                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                .frame(width: 250, height: 60, alignment: .center)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 50)
+                        .stroke(Color.blue, lineWidth: 2)
+                )
+        }
+        
+        Spacer()
+            .frame(height: 20)
+        
+        HStack{
+            Button(action: {
+                totalGrids = totalGrids + 1
+            }){
+              Text("増やす")
+                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                .frame(width: 80, height: 28, alignment: .center)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 4)
+                        .stroke(Color.blue, lineWidth: 2)
+                )
+            }
+            Button(action: {
+                totalGrids = totalGrids - 1
+            }){
+              Text("減らす")
+                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                .frame(width: 80, height: 28, alignment: .center)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 4)
+                        .stroke(Color.blue, lineWidth: 2)
+                )
+            }
+        }
     }
 }
 
@@ -48,7 +94,6 @@ struct RandomGridView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             VStack {
-                RandomGridView()
                 RectangleView(
                     image: Image(systemName: "pencil.circle"),
                     textTitle: "testTitle です")
