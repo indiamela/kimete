@@ -42,7 +42,7 @@ struct RandomGridView: View {
             Rectangle()
                 .fill(Color.blue)
                 .frame(width: 200, height: 200)
-        }
+        }.frame(height: 480)
         
         Spacer()
             .frame(height: 20)
