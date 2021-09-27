@@ -38,53 +38,63 @@ struct RandomGridView: View {
     
     var body: some View {
         
-        WaterfallGrid((0..<totalGrids), id: \.self) { index in
-            Rectangle()
-                .fill(Color.blue)
-                .frame(width: 200, height: 200)
-        }.frame(height: 480)
-        
-        Spacer()
-            .frame(height: 20)
-        
-        Button(action: {
-            buttonText = "Button Tapped"
-        }){
-            Text(buttonText)
-                .font(.largeTitle)
-                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                .frame(width: 250, height: 60, alignment: .center)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 50)
-                        .stroke(Color.blue, lineWidth: 2)
-                )
-        }
-        
-        Spacer()
-            .frame(height: 20)
-        
-        HStack{
-            Button(action: {
-                totalGrids = totalGrids + 1
-            }){
-              Text("増やす")
-                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                .frame(width: 80, height: 28, alignment: .center)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 4)
-                        .stroke(Color.blue, lineWidth: 2)
-                )
+        VStack {
+            ScrollView(.horizontal, showsIndicators: false) {
+              WaterfallGrid((0..<totalGrids), id: \.self) { index in
+                Rectangle()
+                    .fill(Color.blue)
+                    .frame(maxWidth: 100, maxHeight: 100)
+              }
+              .gridStyle(
+                columnsInPortrait: 4, // 行数
+                columnsInLandscape: 4, // TODO: 要確認
+                spacing: 2
+              )
+              .scrollOptions(direction: .horizontal)
+              .padding(EdgeInsets(top: 6, leading: 8, bottom: 16, trailing: 8))
             }
+            
             Button(action: {
-                totalGrids = totalGrids - 1
+                buttonText = "Button Tapped"
             }){
-              Text("減らす")
-                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                .frame(width: 80, height: 28, alignment: .center)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 4)
-                        .stroke(Color.blue, lineWidth: 2)
-                )
+                Text(buttonText)
+                    .font(.largeTitle)
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    .frame(width: 250, height: 60, alignment: .center)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 50)
+                            .stroke(Color.blue, lineWidth: 2)
+                    )
+            }
+            
+            Spacer()
+                .frame(height: 20)
+            
+            HStack{
+                Button(action: {
+                    totalGrids = totalGrids + 1
+                }){
+                  Text("増やす")
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    .frame(width: 80, height: 28, alignment: .center)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 4)
+                            .stroke(Color.blue, lineWidth: 2)
+                    )
+                }
+                Button(action: {
+                    if (totalGrids > 0) {
+                        totalGrids = totalGrids - 1
+                    }
+                }){
+                  Text("減らす")
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    .frame(width: 80, height: 28, alignment: .center)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 4)
+                            .stroke(Color.blue, lineWidth: 2)
+                    )
+                }
             }
         }
     }
