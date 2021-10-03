@@ -21,12 +21,6 @@ struct RouletteView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack{
                 ScrollView(.horizontal, showsIndicators: false) {
-//                    guard let index = categoryIndex else { Text("カテゴリを作成してください")}
-//                    if let index = categoryIndex {
-//                        Text(categories[index].name ?? "")
-//                    } else {
-//                        Text("カテゴリを作成してください")
-//                    }
                     HStack{
                         ForEach(categories){ category in
                             Button(action: {

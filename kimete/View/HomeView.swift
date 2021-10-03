@@ -17,6 +17,10 @@ struct HomeView: View {
         UITabBar.appearance().barTintColor = UIColor.black
         // 選択していないアイテム色を指定
         UITabBar.appearance().unselectedItemTintColor = UIColor.white
+        if #available(iOS 15.0, *) {
+            UITabBar.appearance().unselectedItemTintColor = UIColor.gray
+
+        }
     }
     var body: some View {
         ZStack {
