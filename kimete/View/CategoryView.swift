@@ -35,14 +35,6 @@ struct CategoryView: View {
                 List {
                     ForEach(categories) {category in
                         HStack {
-                            Button(action: {
-                                index = categories.firstIndex(where: {$0.id == category.id ?? ""})!
-                                UserDefaults.standard.setValue(index, forKey: "category_index")
-                            }) {
-                                Image(systemName: "heart.fill")
-                                    .frame(width: 10, height: 10)
-                            }
-                            .softButtonStyle(Circle())
                             Text(category.name ?? "")
                                 .onTapGesture {
                                     index = categories.firstIndex(where: {$0.id == category.id ?? ""})!

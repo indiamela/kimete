@@ -27,28 +27,43 @@ struct RouletteView: View {
                                 selectedCategory = category
                             }) {
                                 Text(category.name ?? "")
-                                    .frame(width: 70, height: 20, alignment: .center)
+                                    .frame(height: 20, alignment: .center)
                             }
                             .softButtonStyle(RoundedRectangle(cornerRadius: 20))
                             .padding()
                         }
                     }
                 }
-                
-                /// テスト用リスト
-                List{
-                    if let category = selectedCategory, category.items?.count ?? 0 > 0 {
-                        ForEach(itemArray(category.items)){ item in
-                            Text(item.name ?? "")
-                        }
-                    } else {
-                        Text("カテゴリを作成してください")
-                    }
+                Spacer()
+                ZStack{
+                    Circle()
+                        .fill(Color.Neumorphic.main)
+                        .softOuterShadow()
+                        .frame(height: 300, alignment: .center)
                 }
-                .cornerRadius(20)
-                .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 10, radius: 20)
                 .padding()
-                .background(Color.clear)
+                Spacer()
+                Circle()
+                    .fill(Color.Neumorphic.main)
+                    .softOuterShadow()
+                    .frame(height: 50, alignment: .center)
+                
+//                List{
+//                    if let category = selectedCategory, category.items?.count ?? 0 > 0 {
+//                        ForEach(itemArray(category.items)){ item in
+//                            Text(item.name ?? "")
+//                        }
+//                        .listRowBackground(Color.MyTheme.offWhite)
+//                    } else {
+//                        Text("カテゴリを作成してください")
+//                            .listRowBackground(Color.MyTheme.offWhite)
+//                    }
+//                }
+//                .cornerRadius(20)
+//                .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 2, radius: 2)
+//                .listStyle(InsetGroupedListStyle())
+//                .padding()
+//                Spacer()
             }
         }
         .toolbar {
