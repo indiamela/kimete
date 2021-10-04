@@ -22,6 +22,7 @@
 		F20F196E26CDBFAE003B37E0 /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F196D26CDBFAE003B37E0 /* ItemsView.swift */; };
 		F20F197026CDCE42003B37E0 /* SettingsToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F196F26CDCE42003B37E0 /* SettingsToggleView.swift */; };
 		F22468D226F00C330003D568 /* CardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22468D126F00C330003D568 /* CardCollectionView.swift */; };
+		F233B331270BBD7900C51476 /* RouletteContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F233B330270BBD7900C51476 /* RouletteContentView.swift */; };
 		F241338F26CF27D200AF6C32 /* prototypeDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241338E26CF27D200AF6C32 /* prototypeDesignView.swift */; };
 		F241339126D0C52000AF6C32 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241339026D0C52000AF6C32 /* SettingsLabelView.swift */; };
 		F241339326D0C75900AF6C32 /* SettingsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241339226D0C75900AF6C32 /* SettingsButtonView.swift */; };
@@ -55,6 +56,7 @@
 		F20F196D26CDBFAE003B37E0 /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
 		F20F196F26CDCE42003B37E0 /* SettingsToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsToggleView.swift; sourceTree = "<group>"; };
 		F22468D126F00C330003D568 /* CardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionView.swift; sourceTree = "<group>"; };
+		F233B330270BBD7900C51476 /* RouletteContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteContentView.swift; sourceTree = "<group>"; };
 		F241338E26CF27D200AF6C32 /* prototypeDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prototypeDesignView.swift; sourceTree = "<group>"; };
 		F241339026D0C52000AF6C32 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
 		F241339226D0C75900AF6C32 /* SettingsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				F20F194326C9D40E003B37E0 /* HomeView.swift */,
+				F233B330270BBD7900C51476 /* RouletteContentView.swift */,
 				F20F196026CB2895003B37E0 /* RouletteView.swift */,
 				F20F196226CB28A4003B37E0 /* RandomGridView.swift */,
 				F20F196426CB2BAD003B37E0 /* SettingsView.swift */,
@@ -267,6 +270,7 @@
 				F24133AC26D1D41600AF6C32 /* Category+CoreDataClass.swift in Sources */,
 				F20F194426C9D40E003B37E0 /* HomeView.swift in Sources */,
 				F24133B126D1D5DE00AF6C32 /* registerSampleData.swift in Sources */,
+				F233B331270BBD7900C51476 /* RouletteContentView.swift in Sources */,
 				F20F196926CC7D41003B37E0 /* CategoryView.swift in Sources */,
 				F24133B426D1D6C700AF6C32 /* Item+CoreDataClass.swift in Sources */,
 				F20F197026CDCE42003B37E0 /* SettingsToggleView.swift in Sources */,
