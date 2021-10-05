@@ -37,67 +37,71 @@ struct RandomGridView: View {
     @State var totalGrids = 5;
     
     var body: some View {
-        
-        VStack {
-            ScrollView(.horizontal, showsIndicators: false) {
-              // TODO: なぜか totalGrids を 2 列目まで表示される個数にしないと Rectangle が初期表示されない
-              WaterfallGrid((0..<totalGrids), id: \.self) { rectangle in
-                Rectangle()
-                    .fill(Color.blue)
-                    .frame(maxWidth: 100, maxHeight: 100)
-              }
-              .frame(height: 400)
-              .gridStyle(
-                columnsInPortrait: 4, // 行数
-                columnsInLandscape: 4, // TODO: 要確認
-                spacing: 2
-              )
-              .scrollOptions(direction: .horizontal)
-              .padding(EdgeInsets(top: 6, leading: 8, bottom: 16, trailing: 8))
-            }
-            
-            Text("count:\(totalGrids)")
-            
-            Button(action: {
-                buttonText = "Button Tapped"
-            }){
-                Text(buttonText)
-                    .font(.largeTitle)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                    .frame(width: 250, height: 60, alignment: .center)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 50)
-                            .stroke(Color.blue, lineWidth: 2)
-                    )
-            }
-            
-            Spacer()
-                .frame(height: 20)
-            
-            HStack{
-                Button(action: {
-                    totalGrids = totalGrids + 1
-                }){
-                  Text("増やす")
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                    .frame(width: 80, height: 28, alignment: .center)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 4)
-                            .stroke(Color.blue, lineWidth: 2)
-                    )
-                }
-                Button(action: {
-                    if (totalGrids > 0) {
-                        totalGrids = totalGrids - 1
+        ZStack{
+            Color.MyTheme.offWhite
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    // TODO: なぜか totalGrids を 2 列目まで表示される個数にしないと Rectangle が初期表示されない
+                    WaterfallGrid((0..<totalGrids), id: \.self) { rectangle in
+                        RoundedRectangleView()
+                        //                Rectangle()
+                        //                    .fill(Color.blue)
+                        //                    .frame(maxWidth: 100, maxHeight: 100)
                     }
-                }){
-                  Text("減らす")
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                    .frame(width: 80, height: 28, alignment: .center)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 4)
-                            .stroke(Color.blue, lineWidth: 2)
+                    .frame(height: 400)
+                    .gridStyle(
+                        columnsInPortrait: 4, // 行数
+                        columnsInLandscape: 4, // TODO: 要確認
+                        spacing: 2
                     )
+                    .scrollOptions(direction: .horizontal)
+                    .padding(EdgeInsets(top: 6, leading: 8, bottom: 16, trailing: 8))
+                }
+                
+                Text("count:\(totalGrids)")
+                
+                Button(action: {
+                    buttonText = "Button Tapped"
+                }){
+                    Text(buttonText)
+                        .font(.largeTitle)
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                        .frame(width: 250, height: 60, alignment: .center)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 50)
+                                .stroke(Color.blue, lineWidth: 2)
+                        )
+                }
+                
+                Spacer()
+                    .frame(height: 20)
+                
+                HStack{
+                    Button(action: {
+                        totalGrids = totalGrids + 1
+                    }){
+                        Text("増やす")
+                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                            .frame(width: 80, height: 28, alignment: .center)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 4)
+                                    .stroke(Color.blue, lineWidth: 2)
+                            )
+                    }
+                    Button(action: {
+                        if (totalGrids > 0) {
+                            totalGrids = totalGrids - 1
+                        }
+                    }){
+                        Text("減らす")
+                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                            .frame(width: 80, height: 28, alignment: .center)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 4)
+                                    .stroke(Color.blue, lineWidth: 2)
+                            )
+                    }
                 }
             }
         }
