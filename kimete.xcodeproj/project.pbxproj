@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17CF3DF426F15F1400D8334E /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 17CF3DF326F15F1400D8334E /* WaterfallGrid */; };
+		17F0024C270D0D6600BF4511 /* RoundedRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0024B270D0D6600BF4511 /* RoundedRectangleView.swift */; };
 		F20F194226C9D40E003B37E0 /* kimeteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F194126C9D40E003B37E0 /* kimeteApp.swift */; };
 		F20F194426C9D40E003B37E0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20F194326C9D40E003B37E0 /* HomeView.swift */; };
 		F20F194626C9D410003B37E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F20F194526C9D410003B37E0 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17F0024B270D0D6600BF4511 /* RoundedRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleView.swift; sourceTree = "<group>"; };
 		F20F193E26C9D40E003B37E0 /* kimete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kimete.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F20F194126C9D40E003B37E0 /* kimeteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kimeteApp.swift; sourceTree = "<group>"; };
 		F20F194326C9D40E003B37E0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				F241339226D0C75900AF6C32 /* SettingsButtonView.swift */,
 				F2C3297F26DA0F7000B45A3C /* AddTextView.swift */,
 				F22468D126F00C330003D568 /* CardCollectionView.swift */,
+				17F0024B270D0D6600BF4511 /* RoundedRectangleView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				F24133AD26D1D41600AF6C32 /* Category+CoreDataProperties.swift in Sources */,
 				F241339126D0C52000AF6C32 /* SettingsLabelView.swift in Sources */,
 				F20F196326CB28A4003B37E0 /* RandomGridView.swift in Sources */,
+				17F0024C270D0D6600BF4511 /* RoundedRectangleView.swift in Sources */,
 				F20F196726CB2D24003B37E0 /* Color+Extension.swift in Sources */,
 				F20F194226C9D40E003B37E0 /* kimeteApp.swift in Sources */,
 				F24133D926D255C700AF6C32 /* sampleListView.swift in Sources */,
