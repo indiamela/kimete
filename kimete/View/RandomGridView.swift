@@ -44,7 +44,7 @@ struct RandomGridView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     WaterfallGrid((0..<totalGrids), id: \.self) { rectangle in
                         RoundedRectangleView()
-                            .padding(20) // TODO: padding が当たらない
+                            .padding(4)
                     }
                     .frame(height: 400)
                     .gridStyle(
