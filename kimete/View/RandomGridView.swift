@@ -34,7 +34,7 @@ struct RectangleView: View {
 
 struct RandomGridView: View {
     @State var buttonText = "Start"
-    @State var totalGrids = 5;
+    @State var totalGrids = 2;
     
     var body: some View {
         ZStack{
@@ -42,18 +42,15 @@ struct RandomGridView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    // TODO: なぜか totalGrids を 2 列目まで表示される個数にしないと Rectangle が初期表示されない
                     WaterfallGrid((0..<totalGrids), id: \.self) { rectangle in
                         RoundedRectangleView()
-                        //                Rectangle()
-                        //                    .fill(Color.blue)
-                        //                    .frame(maxWidth: 100, maxHeight: 100)
+                            .padding(20) // TODO: padding が当たらない
                     }
                     .frame(height: 400)
                     .gridStyle(
                         columnsInPortrait: 4, // 行数
                         columnsInLandscape: 4, // TODO: 要確認
-                        spacing: 2
+                        spacing: 4
                     )
                     .scrollOptions(direction: .horizontal)
                     .padding(EdgeInsets(top: 6, leading: 8, bottom: 16, trailing: 8))
