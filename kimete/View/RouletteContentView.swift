@@ -10,6 +10,7 @@ import Neumorphic
 
 struct RouletteContentView: View {
     let symbols:[Item]
+    @State var isAnimation = false
     
     var body: some View {
         ZStack {
@@ -22,6 +23,15 @@ struct RouletteContentView: View {
                     Color.Neumorphic.darkShadow, lineWidth: 1.5)
                 .overlay(
                     annotations.foregroundColor(Color.gray))
+                .rotationEffect(Angle(degrees: self.isAnimation ? 360 * 10 : 0))
+                .onAppear() {
+                    withAnimation(
+                        Animation
+                            .linear(duration: 1)
+                            .repeatForever(autoreverses: false)) {
+                                self.isAnimation.toggle()
+                    }
+                }
         }
         .frame(height: 300, alignment: .center)
     }
@@ -74,5 +84,48 @@ struct RouletteContentView: View {
 //struct RouletteContentView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        RouletteContentView()
+//    }
+//}
+
+//struct ContentView: View {
+//
+//    @State var isAnimation = false
+//
+//    var body: some View {
+//        ZStack {
+//            RoundedRectangle(cornerRadius: 8)
+//                .frame(width: 200, height: 120, alignment: .center)
+//                .foregroundColor(Color.gray)
+//
+//            VStack {
+//                Spacer()
+//                Circle()
+//                    .trim(from: 0, to: 0.6)
+//                    .stroke(AngularGradient(gradient: Gradient(colors: [.gray, .white]), center: .center),
+//                            style: StrokeStyle(
+//                                lineWidth: 8,
+//                                lineCap: .round,
+//                                dash: [0.1, 16],
+//                                dashPhase: 8))
+//
+//                    .frame(width: 48, height: 48)
+//                    .rotationEffect(Angle(degrees: self.isAnimation ? 360 : 0))
+//                    .onAppear() {
+//                        withAnimation(
+//                            Animation
+//                                .linear(duration: 1)
+//                                .repeatForever(autoreverses: false)) {
+//                                    self.isAnimation.toggle()
+//                        }
+//                }
+//
+//                Text("読み込み中")
+//                    .foregroundColor(.white)
+//                    .font(.system(size: 12, weight: .medium, design: .rounded))
+//                    .lineLimit(1)
+//                    .padding(.top)
+//                Spacer()
+//            }
+//        }
 //    }
 //}

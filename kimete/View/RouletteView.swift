@@ -11,8 +11,8 @@ struct RouletteView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(entity: Category.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Category.id, ascending: true)])
     private var categories: FetchedResults<Category>
-    @State var selected: Int = 0
     @State var selectedCategory: Category?
+    @State var isAnimation = false
     @AppStorage("category_index") var categoryIndex: Int?
     
     var body: some View {
@@ -40,22 +40,14 @@ struct RouletteView: View {
                         .padding()
                 }
                 Spacer()
-                //                List{
-                //                    if let category = selectedCategory, category.items?.count ?? 0 > 0 {
-                //                        ForEach(itemArray(category.items)){ item in
-                //                            Text(item.name ?? "")
-                //                        }
-                //                        .listRowBackground(Color.MyTheme.offWhite)
-                //                    } else {
-                //                        Text("カテゴリを作成してください")
-                //                            .listRowBackground(Color.MyTheme.offWhite)
-                //                    }
-                //                }
-                //                .cornerRadius(20)
-                //                .softOuterShadow(darkShadow: Color.MyTheme.blackShadow, lightShadow: Color.MyTheme.whiteShadow, offset: 2, radius: 2)
-                //                .listStyle(InsetGroupedListStyle())
-                //                .padding()
-                //                Spacer()
+                Button(action: {
+                    isAnimation.toggle()
+                }) {
+                    Image(systemName: "play.fill")
+                }
+                .softButtonStyle(Circle())
+                .frame(width: 50, height: 50)
+                .padding()
             }
         }
         .toolbar {
