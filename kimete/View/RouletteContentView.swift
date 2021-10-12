@@ -11,6 +11,7 @@ import Neumorphic
 struct RouletteContentView: View {
     let symbols:[Item]
     @State var isAnimation = false
+    @State var start = false
     
     var body: some View {
         ZStack {
@@ -18,20 +19,35 @@ struct RouletteContentView: View {
                 .fill(Color.Neumorphic.main)
                 .softOuterShadow()
 
-            WheelShape(symbols)
-                .stroke(
-                    Color.Neumorphic.darkShadow, lineWidth: 1.5)
-                .overlay(
-                    annotations.foregroundColor(Color.gray))
-                .rotationEffect(Angle(degrees: self.isAnimation ? 360 * 10 : 0))
-                .onAppear() {
-                    withAnimation(
-                        Animation
-                            .linear(duration: 1)
-                            .repeatForever(autoreverses: false)) {
-                                self.isAnimation.toggle()
-                    }
+            VStack {
+                WheelShape(symbols)
+                    .stroke(
+                        Color.Neumorphic.darkShadow, lineWidth: 1.5)
+                    .overlay(
+                        annotations.foregroundColor(Color.gray))
+                    .rotationEffect(Angle(degrees: isAnimation ? 360 * 2 : 0))
+                    .onAppear{withAnimation(Animation.linear(duration: 1).repeat(while: start)){ self.isAnimation.toggle()}}
+//                        Animation.default.repeat(while: start))
+//                    .animation(start ? Animation.linear(duration: 1).repeatForever(autoreverses: false) {self.isAnimation.toggle()} : .default)
+//                    .animation {
+//                        if start {
+//                            withAnimation(
+//                                Animation
+//                                    .linear(duration: 1)
+//                                    .repeatForever(autoreverses: false)) {
+//                                        self.isAnimation.toggle()
+//                                    }
+//                        }
+//                    }
+                Spacer()
+                Button(action: {
+                    start.toggle()
+                }) {
+                    Image(systemName: "play.fill")
                 }
+                .softButtonStyle(Circle())
+                .frame(width: 50, height: 50)
+            }
         }
         .frame(height: 300, alignment: .center)
     }
@@ -78,6 +94,16 @@ struct RouletteContentView: View {
             })
             
             return path
+        }
+    }
+}
+
+extension Animation {
+    func `repeat`(while expression: Bool) -> Animation {
+        if expression {
+            return self.repeatForever(autoreverses: false)
+        } else {
+            return self
         }
     }
 }

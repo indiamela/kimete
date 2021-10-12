@@ -39,15 +39,6 @@ struct RouletteView: View {
                     RouletteContentView(symbols: itemArray(category.items))
                         .padding()
                 }
-                Spacer()
-                Button(action: {
-                    isAnimation.toggle()
-                }) {
-                    Image(systemName: "play.fill")
-                }
-                .softButtonStyle(Circle())
-                .frame(width: 50, height: 50)
-                .padding()
             }
         }
         .toolbar {
