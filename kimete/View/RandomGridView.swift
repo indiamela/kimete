@@ -35,26 +35,43 @@ struct RectangleView: View {
 struct RandomGridView: View {
     @State var buttonText = "Start"
     @State var totalGrids = 2;
+//    LazyGrid用
+    var columns = [
+        GridItem(.adaptive(minimum: 80))
+    ]
     
     var body: some View {
         ZStack{
             Color.MyTheme.offWhite
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    WaterfallGrid((0..<totalGrids), id: \.self) { rectangle in
-                        RoundedRectangleView()
-                            .padding(4)
+//                LazyVGrid用
+                ScrollView(.vertical) {
+                    LazyVGrid(columns: columns, alignment: .center, spacing: 8) {
+                        ForEach((0..<totalGrids), id: \.self) { num in
+                            ZStack {
+                                RoundedRectangleView()
+                                Text("\(num + 1)").foregroundColor(.white)
+                            }
+                        }
                     }
-                    .frame(height: 400)
-                    .gridStyle(
-                        columnsInPortrait: 4, // 行数
-                        columnsInLandscape: 4, // TODO: 要確認
-                        spacing: 4
-                    )
-                    .scrollOptions(direction: .horizontal)
-                    .padding(EdgeInsets(top: 6, leading: 8, bottom: 16, trailing: 8))
                 }
+                
+//                WaterfallGrid用
+//                ScrollView(.horizontal, showsIndicators: false) {
+//                    WaterfallGrid((0..<totalGrids), id: \.self) { rectangle in
+//                        RoundedRectangleView()
+//                            .padding(4)
+//                    }
+//                    .frame(height: 400)
+//                    .gridStyle(
+//                        columnsInPortrait: 4, // 行数
+//                        columnsInLandscape: 4, // TODO: 要確認
+//                        spacing: 4
+//                    )
+//                    .scrollOptions(direction: .horizontal)
+//                    .padding(EdgeInsets(top: 6, leading: 8, bottom: 16, trailing: 8))
+//                }
                 
                 Text("count:\(totalGrids)")
                 
